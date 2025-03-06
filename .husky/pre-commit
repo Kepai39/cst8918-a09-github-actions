@@ -1,0 +1,10 @@
+# run terraform static tests
+cd infrastructure
+echo "Running terraform fmt ..."
+terraform fmt -recursive
+echo "Running terraform validate ..."
+terraform validate
+echo "Running tflint ..."
+tflint
+echo "All Terraform checks passed."
+cd ..
