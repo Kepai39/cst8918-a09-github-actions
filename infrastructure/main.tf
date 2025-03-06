@@ -27,12 +27,6 @@ variable "region" {
   default     = "Canada Central"
   description = "the defined region"
 }
-#the variable for admin username, i called it azureadmin for ease of use
-variable "admin_username" {
-  type        = string
-  default     = "azureadmin"
-  description = "the username of admin"
-}
 
 # Define providers and their config params
 provider "azurerm" {
