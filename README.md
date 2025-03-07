@@ -14,4 +14,5 @@ The extra branch is used for pull requests to activate the github actions.
 ![The succesfull and fail workflows depending on syntax](<Screenshot 2025-03-07 at 5.23.42 PM.png>)
 
 ## Resources:
-https://github.com/marketplace/actions/terraform-validate
+Flook, Daniel. (2025). terraform-validate—GitHub Marketplace. GitHub. https://github.com/marketplace/actions/terraform-validate
+
