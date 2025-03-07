@@ -23,8 +23,8 @@ variable "labelPrefix" {
 }
 #variable for region, default set to canada central
 variable "region" {
-  type    = string
-  default = "Canada Central"
+  type        = string
+  default     = "Canada Central"
   description = "this is the region for resource group"
 }
 
