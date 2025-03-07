@@ -19,11 +19,13 @@ terraform {
 variable "labelPrefix" {
   type        = string
   default     = "daig0104"
+  description = "the prefix that goes labels"
 }
 #variable for region, default set to canada central
 variable "region" {
   type        = string
   default     = "Canada Central"
+  description = "The resource group location"
 }
 
 # Define providers and their config params
@@ -42,7 +44,7 @@ resource "azurerm_resource_group" "Lab9RG" {
 }
 
 resource "azurerm_storage_account" "lab9Storage" {
-  name                     = "lab9Storagecst8918"
+  name                     = "lab9SStoragecst8918"
   resource_group_name      = azurerm_resource_group.Lab9RG.name
   location                 = azurerm_resource_group.Lab9RG.location
   account_tier             = "Standard"
