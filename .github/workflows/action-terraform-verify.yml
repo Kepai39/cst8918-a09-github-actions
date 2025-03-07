@@ -1,20 +1,15 @@
 name: Validate terraform fmt
 on:
-  push:
-    branches:
-     - main
   pull_request:
     branches:
       - main
-
-  workflow_dispatch:
+      - master
 
 permissions:
   id-token: write
   contents: read
 
-
-jobs:        
+jobs:
   validate:
     runs-on: ubuntu-latest
     name: terraform fmt check
@@ -55,14 +50,21 @@ jobs:
       - name: Process check
         if: always()
         run: exit $CHECK_STATUS
-        
 
   terraform-validation:
     runs-on: ubuntu-latest
     name: terraform validate script check
     steps:
         - uses: actions/checkout@v3
-        
+          with:
+            fetch-depth: 2
+
+        - name: Fetch changed files
+          id: pr_files
+          uses: jitterbit/get-changed-files@v1
+          with:
+            format: "space-delimited"
+            
         - name: Configure terraform
           uses: hashicorp/setup-terraform@v2
           with:
