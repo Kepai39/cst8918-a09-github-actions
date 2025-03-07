@@ -55,26 +55,29 @@ jobs:
 
   terraform-validation:
     runs-on: ubuntu-latest
-    name: terraform validate script check
+    name: Validate Terraform module
     steps:
-        - uses: actions/checkout@v3
-          with:
-            fetch-depth: 2
-            
-        - name: Fetch changed files
-          id: pr_files
-          uses: jitterbit/get-changed-files@v1
-          with:
-            format: "space-delimited"
-            
-        - name: Configure terraform
-          uses: hashicorp/setup-terraform@v2
-          with:
-            terraform_version: 1.2.4
-        
-        - name: Initialize Terraform
-          run: terraform init
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
-        - name: validate terraform
-          run: terraform validate
+      - name: Fetch changed files
+        id: pr_files
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: "space-delimited"
+      - name: Configure terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.2.4
 
+      - name: terraform validate
+        uses: dflook/terraform-validate@v1
+        id: validate
+        with:
+          path: ./infrastructure
+
+      - name: Validate failed
+        if: ${{ failure() && steps.validate.outputs.failure-reason == 'validate-failed' }}
+        run: echo "terraform validate failed"
