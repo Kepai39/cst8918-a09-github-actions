@@ -1,8 +1,5 @@
 name: Validate terraform fmt
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -64,7 +61,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
-          
+
       - name: Fetch changed files
         id: pr_files
         uses: jitterbit/get-changed-files@v1
