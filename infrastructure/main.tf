@@ -19,7 +19,6 @@ terraform {
 variable "labelPrefix" {
   type        = string
   default     = "daig0104"
-  description = "this is the prefix for the label"
 }
 #variable for region, default set to canada central
 variable "region" {
