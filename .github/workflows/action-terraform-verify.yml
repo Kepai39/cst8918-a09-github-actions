@@ -5,9 +5,12 @@ on:
       - main
       - master
 
+  workflow_dispatch:
+
 permissions:
   id-token: write
   contents: read
+
 
 jobs:
   validate:
