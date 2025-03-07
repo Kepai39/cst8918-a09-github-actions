@@ -23,8 +23,8 @@ variable "labelPrefix" {
 }
 #variable for region, default set to canada central
 variable "region" {
-  type    = string
-  default = "Canada Central"
+  type      = string
+  default   = "Canada Central"
 }
 
 # Define providers and their config params
@@ -43,7 +43,7 @@ resource "azurerm_resource_group" "Lab9RG" {
 }
 
 resource "azurerm_storage_account" "lab9Storage" {
-  name                     = "lab9Storagecst8918"
+  name                     = "lab9SStoragecst8918"
   resource_group_name      = azurerm_resource_group.Lab9RG.name
   location                 = azurerm_resource_group.Lab9RG.location
   account_tier             = "Standard"
