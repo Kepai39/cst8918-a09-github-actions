@@ -78,5 +78,3 @@ jobs:
         - name: validate terraform
           run: terraform validate
 
-
-
