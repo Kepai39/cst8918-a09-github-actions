@@ -42,7 +42,7 @@ resource "azurerm_resource_group" "Lab9RG" {
 }
 
 resource "azurerm_storage_account" "lab9Storage" {
-  name                     = "lab9SStoragecst8918"
+  name                     = "lab9Storagecst8918"
   resource_group_name      = azurerm_resource_group.Lab9RG.name
   location                 = azurerm_resource_group.Lab9RG.location
   account_tier             = "Standard"
