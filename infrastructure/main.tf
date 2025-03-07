@@ -23,8 +23,8 @@ variable "labelPrefix" {
 }
 #variable for region, default set to canada central
 variable "region" {
-  type        = string
-  default     = "Canada Central"
+  type    = string
+  default = "Canada Central"
 }
 
 # Define providers and their config params
