@@ -78,6 +78,6 @@ jobs:
         with:
           path: ./infrastructure
 
-      - name: Validate failed
+      - name: Validate fail
         if: ${{ failure() && steps.validate.outputs.failure-reason == 'validate-failed' }}
         run: echo "terraform validate failed"
